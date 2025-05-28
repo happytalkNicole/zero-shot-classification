@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제로샷 텍스트 분류</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <p id="status"></p>
+      <textarea
+        id="text-input"
+        placeholder="분류할 텍스트 입력"
+        rows="10"
+        cols="50"
+        class="text-input"
+      ></textarea>
+      <input
+        class="labels-input"
+        id="labels-input"
+        type="text"
+        placeholder="라벨 입력 (띄어쓰기 없는 쉼표로 구분)"
+        value="입금,환불,불법,사기,정지,처벌"
+      />
+      <button id="detect-button">분류하기</button>
+      <div id="result" class="result"></div>
+    </main>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

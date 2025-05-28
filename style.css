@@ -1,0 +1,89 @@
+html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  margin: 40px auto;
+  width: max(50vw, 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  border: 2px solid black;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#file-upload {
+  display: none;
+}
+
+.upload-icon {
+  width: 30px;
+}
+
+#image-container {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+#image-container > img {
+  width: 100%;
+}
+
+.bounding-box {
+  position: absolute;
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.bounding-box-label {
+  color: white;
+  position: absolute;
+  font-size: 12px;
+  margin-top: -16px;
+  margin-left: -2px;
+  padding: 1px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.labels-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.result {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#detect-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
