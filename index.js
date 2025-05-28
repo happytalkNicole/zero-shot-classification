@@ -32,13 +32,11 @@ worker.onmessage = (event) => {
         console.log(result);
         const mostLikelyLabel = result.labels[0];
         const mostLikelyScore = result.scores[0];
-        console.log(`가장 가능성이 높은 라벨: ${mostLikelyLabel} (점수: ${(mostLikelyScore * 100).toFixed(4)})`);
 
         resultContainer.innerHTML += `<div class="result-item">
             <h3>텍스트: ${result.sequence}</h3>
-            <h4>추측: ${mostLikelyLabel} (점수: ${(mostLikelyScore * 100).toFixed(4)})</h4>
-            <p>라벨: ${result.labels.join(", ")}</p>
-            <p>점수: ${result.scores.map(score => (score * 100).toFixed(4)).join(", ")}</p>
+            <h4>추측: ${mostLikelyLabel} (점수: ${(mostLikelyScore * 100).toFixed(1)}%)</h4>
+            ${result.labels.map((label, index) => `${label}: ${(result.scores[index] * 100).toFixed(1)}%`).join("<br>")}
         </div>`;
 
         if (isLastChunk) {
