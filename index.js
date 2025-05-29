@@ -1,4 +1,6 @@
 // Reference the elements that we will need
+import { samples } from './sample.js'
+
 const status = document.getElementById("status");
 const textInput = document.getElementById("text-input");
 const labelsInput = document.getElementById("labels-input");
@@ -6,10 +8,12 @@ const labelsInput = document.getElementById("labels-input");
 const detectButton = document.getElementById("detect-button");
 const resultContainer = document.getElementById("result");
 
-status.textContent = "모델 로딩 중...";
+status.textContent = "모델 로딩 중... (5초 ~ 30초 소요)";
 
 
 const worker = new Worker('./worker.js', { type: 'module' });
+
+textInput.value = samples.trim();
 
 worker.postMessage({
     type: 'loadModel'

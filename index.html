@@ -9,7 +9,9 @@
 
   <body>
     <main class="container">
-      <p id="status"></p>
+      <label for="text-input">
+        종류를 구분할 문장을 입력하세요 (엔터로 구분)</label
+      >
       <textarea
         id="text-input"
         placeholder="분류할 텍스트 입력"
@@ -17,13 +19,19 @@
         cols="50"
         class="text-input"
       ></textarea>
+
+      <br />
+      <label for="labels-input">분류할 라벨을 입력하세요</label>
       <input
         class="labels-input"
         id="labels-input"
         type="text"
         placeholder="라벨 입력 (띄어쓰기 없는 쉼표로 구분)"
-        value="입금,환불,불법,사기,정지,처벌"
+        value="입금,환불,불법,사기,정지,처벌,정보,배송조회,반품"
       />
+
+      <p id="status"></p>
+
       <button id="detect-button">분류하기</button>
       <div id="result" class="result"></div>
     </main>
