@@ -1,5 +1,5 @@
 // Reference the elements that we will need
-import { samples } from './sample.js'
+import { samples, safeSamples } from './sample.js'
 
 const status = document.getElementById("status");
 const textInput = document.getElementById("text-input");
@@ -13,7 +13,9 @@ status.textContent = "모델 로딩 중... (5초 ~ 30초 소요)";
 
 const worker = new Worker('./worker.js', { type: 'module' });
 
-textInput.value = samples.trim();
+textInput.value =
+    `${samples.trim()}
+${safeSamples.trim()}`;
 
 worker.postMessage({
     type: 'loadModel'
