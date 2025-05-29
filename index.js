@@ -30,6 +30,7 @@ function chunkArray(array, chunkSize) {
 worker.onmessage = (event) => {
     if (event.data.type === 'modelLoaded') {
         status.textContent = "준비 완료.";
+        detectButton.disabled = false;
     } else if (event.data.type === 'result') {
         status.textContent = "분석 중...";
         const { result, isLastChunk } = event.data;
@@ -45,6 +46,7 @@ worker.onmessage = (event) => {
 
         if (isLastChunk) {
             status.textContent = "분석 완료.";
+            detectButton.disabled = false;
         }
 
     }
@@ -63,6 +65,7 @@ detectButton.addEventListener("click", async () => {
     const labels = labelsInput.value.split(",").map((label) => label.trim());
 
     if (textsSplitByNewline.length > 0 && labels.length > 0) {
+        detectButton.disabled = true;
         status.textContent = "분석 중...";
         for (const text of chunkedTexts) {
             const isLastChunk = text === chunkedTexts[chunkedTexts.length - 1];

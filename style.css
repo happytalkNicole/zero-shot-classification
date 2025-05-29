@@ -91,3 +91,8 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+
+#detect-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
